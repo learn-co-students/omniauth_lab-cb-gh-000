@@ -1,1 +1,9 @@
-<a href='/auth/facebook'>Login with Facebook</a>
+
+<% if session[:user_id] %>
+  Name: <%= @user.name %> <br>
+  Email: <%= @user.email %> <br>
+  Uid: <%= @user.uid %> <br>
+  Image: <img src="<%= @user.image %>" title="Facebook_image">
+<% else %>
+  <a href='/auth/facebook'>Login with Facebook</a>
+<% end %>
